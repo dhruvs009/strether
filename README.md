@@ -8,17 +8,17 @@ Project : Strether is an ethereum based peer to peer streaming service where the
           lot of liberty in the sense that he/she doesn't need to pay for the whole seminar/live-stream/media, if they only 
           want to experience a part of the whole thing.
           
-Tech Stack : Real Time Messaging Protocol \n
-             Ethereum
-             Ganache
-             Truffle
-             Metamask
-             Python
-             tkinter
-             Nodejs
-             Get/Post APIs
-             Etherscan for Development purpose
-             ant-media-server
+Tech Stack : Real Time Messaging Protocol\
+             Ethereum\
+             Ganache\
+             Truffle\
+             Metamask\
+             Python\
+             tkinter\
+             Nodejs\
+             Get/Post APIs\
+             Etherscan for Development purpose\
+             ant-media-server\
              WebRTCApp
              Angularjs
              Reactjs
