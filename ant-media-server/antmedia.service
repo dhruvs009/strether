@@ -1,0 +1,18 @@
+[Unit]
+Description=AntMedia
+After=syslog.target network.target
+
+[Service]
+Type=forking
+Environment=PID=/var/run/antmedia.pid
+Environment=JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64
+LimitNOFILE=65536
+Environment=ANTMEDIA_HOME=/usr/local/antmedia
+WorkingDirectory=/usr/local/antmedia
+
+ExecStart=/usr/bin/jsvc -home ${JAVA_HOME} -user antmedia -cwd ${ANTMEDIA_HOME} -Dlogback.ContextSelector=org.red5.logging.LoggingContextSelector -cp ${ANTMEDIA_HOME}/commons-daemon-1.0.15.jar:${ANTMEDIA_HOME}/ant-media-server-service.jar:${ANTMEDIA_HOME}/conf -Djava.security.debug=failure -Djava.security.egd=file:/dev/./urandom -Dcatalina.home=${ANTMEDIA_HOME} -Dcatalina.useNaming=true -Dorg.terracotta.quartz.skipUpdateCheck=true -XX:+UseG1GC -XX:+HeapDumpOnOutOfMemoryError -Djava.library.path=/usr/local/antmedia/lib/native -Djava.library.path=/usr/local/antmedia/lib/native -Xverify:none -Djava.awt.headless=true -XX:+TieredCompilation -XX:+UseBiasedLocking -XX:InitialCodeCacheSize=8m -XX:ReservedCodeCacheSize=32m -errfile ${ANTMEDIA_HOME}/log/antmedia-error.log -Djava.net.preferIPv4Stack=true -umask 133 -pidfile ${PID} org.red5.daemon.EngineLauncher 9999
+
+ExecStop=/usr/bin/jsvc -stop -pidfile ${PID} org.red5.daemon.EngineLauncher 9999
+
+[Install]
+WantedBy=multi-user.target
