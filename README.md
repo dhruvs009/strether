@@ -19,13 +19,13 @@ Tech Stack : Real Time Messaging Protocol\
              Get/Post APIs\
              Etherscan for Development purpose\
              ant-media-server\
-             WebRTCApp
-             Angularjs
-             Reactjs
-             Web3js
-             Postman
-             PostgreSQL
-             Firebase
+             WebRTCApp\
+             Angularjs\
+             Reactjs\
+             Web3js\
+             Postman\
+             PostgreSQL\
+             Firebase\
              
              
 Uniqueness : * Most of the streaming apps are centralized/server based, so we made an attempt to build a DApp.
